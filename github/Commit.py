@@ -288,7 +288,7 @@ class Commit(github.GithubObject.CompletableGithubObject):
             self._requester,
             self.url + "/check-runs",
             url_parameters,
-            headers={"Accept": "application/vnd.github.v3+json"},
+            headers={"Accept": "application/vnd.github.antiope-preview+json"},
             list_item="check_runs",
         )
 
@@ -310,7 +310,7 @@ class Commit(github.GithubObject.CompletableGithubObject):
             parameters["app_id"] = app_id
         if check_name is not github.GithubObject.NotSet:
             parameters["check_name"] = check_name
-        request_headers = {"Accept": "application/vnd.github.v3+json"}
+        request_headers = {"Accept": "application/vnd.github.antiope-preview+json"}
         return github.PaginatedList.PaginatedList(
             github.CheckSuite.CheckSuite,
             self._requester,
